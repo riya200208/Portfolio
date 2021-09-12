@@ -1,0 +1,80 @@
+{
+  "dishes": [
+    {
+      "id": 0,
+      "name": "Rmail",
+      "image": "images/rmail.png",
+      "featured": true,
+      "languages": "HTML CSS Javascript Bootstrap",
+      "description": "An emailing website which is not completed yet!"
+    },
+    {
+      "id": 1,
+      "name": "Food is here!",
+      "image": "images/foodie.png",
+      "featured": false,
+      "languages": "HTML CSS Javascript",
+      "description": "Online food ordering website frontend is done only."
+    },
+    {
+      "id": 2,
+      "name": "Ri As!",
+      "image": "images/rias.png",
+      "featured": false,
+      "languages": "HTML CSS Javascript Bootstrap",
+      "description": "Created this one just to test myself and to clear concepts."
+    }
+  ],
+  "comments": [
+    {
+      "author": "Riya",
+      "comment": "Good one",
+      "date": "2021-09-11T18:14:17.145Z",
+      "id": 1
+    }
+  ],
+  "promotions": [
+    {
+      "id": 0,
+      "name": "Weekend Grand Buffet",
+      "image": "images/home.jpg",
+      "featured": true,
+      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+    }
+  ],
+  "leaders": [
+    {
+      "id": 1,
+      "name": "Riya Das",
+      "image": "images/riya.jpg",
+      "designation": "developer",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Riya Das",
+      "image": "images/p1.png",
+      "designation": "developer",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "name": "Riya Das",
+      "image": "images/p2.png",
+      "designation": "developer",
+      "featured": false
+    }
+  ],
+  "feedback": [
+    {
+      "firstname": "Riya",
+      "lastname": "Das",
+      "telnum": "99387588985",
+      "email": "riyadas.200208@gmail.com",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "",
+      "id": 1
+    }
+  ]
+}

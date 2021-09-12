@@ -1,0 +1,73 @@
+body{
+    background-color: black;
+}
+
+.page-enter{
+    opacity: 0.01;
+    transform: translateX(-100%);
+}
+.page-enter-active{
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 300ms ease-in;
+}
+.page-exit{
+    opacity: 1;
+    transform: translateX(0%);
+}
+.page-exit-actiive{
+    opacity: 0.01;
+    transform: translateX(100%);
+    transition: all 300ms ease-out;
+}
+.pdf-container{
+
+    overflow-y: auto;
+    background-color: black;
+    color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-shadow{
+    background-color: black;
+    padding: 10px;
+    box-shadow: 0px  10px 7px #2c2b2b;
+    border: none;
+  }
+  .box-shadow-button {
+      background-color: black;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow:0 0 7px red;
+  }
+.box-shadow-button:hover{
+    background-color: rgb(49, 47, 47);
+    color: red;
+}
+
+.box-shadow-input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid pink;
+    background-color: black;
+    padding: 10px;
+    box-shadow: 0px  10px 7px #2c2b2b;
+}
+.box-shadow-input:focus{
+    background-color: black;
+}
+.box-shadow-card{
+    background-color: black;
+    padding: 10px;
+    box-shadow: 8px  10px 7px #2c2b2b;
+    border: 1px solid black;
+}
+.box-shadow-card:hover{
+
+        transform:scale(1.1);
+        transition: all .1s linear;
+     
+  
+}
