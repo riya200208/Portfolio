@@ -1,14 +1,14 @@
 
 import * as ActionTypes from './ActionTypes';
 
- export const Dishes = (state = {isLoading:true, errmess:null, dishes:[]}, action) => {
+ export const Projects = (state = {isLoading:true, errmess:null, projects:[]}, action) => {
     switch (action.type) {
-        case ActionTypes.ADD_DISHES:
-            return{...state, isLoading:false, errmess:null, dishes:action.payload}
-        case ActionTypes.DISHES_LOADING:
-            return {...state, isLoading: true, errMess: null, dishes: []}
+        case ActionTypes.ADD_PROJECTS:
+            return{...state, isLoading:false, errmess:null, projects:action.payload}
+        case ActionTypes.PROJECTS_LOADING:
+            return {...state, isLoading: true, errMess: null, ptojects: []}
 
-        case ActionTypes.DISHES_FAILED:
+        case ActionTypes.PROJECTS_FAILED:
             return {...state, isLoading: false, errMess: action.payload};
 
           default:

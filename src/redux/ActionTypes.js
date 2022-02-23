@@ -1,8 +1,8 @@
 export const ADD_COMMENT = 'ADD_COMMENT';
 
-export const DISHES_LOADING = 'DISHES_LOADING';
-export const DISHES_FAILED = 'DISHES_FAILED';
-export const ADD_DISHES = 'ADD_DISHES';
+export const PROJECTS_LOADING = 'PROJECTS_LOADING';
+export const PROJECTS_FAILED = 'PROJECTS_FAILED';
+export const ADD_PROJECTS = 'ADD_PROJECTS';
 
 export const ADD_COMMENTS = 'ADD_COMMENTS';
 export const COMMENTS_FAILED = 'COMMENTS_FAILED';

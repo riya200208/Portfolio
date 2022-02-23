@@ -45,10 +45,10 @@ export const postComment = (author, comment) => (dispatch) => {
 
 // Thunk lets us return a function instead of an action
 // This can be useful for more complex actions, such as in fetchDishes below
-export const fetchDishes = () => (dispatch) => {
-    dispatch(dishesLoading(true))
+export const fetchProjects = () => (dispatch) => {
+    dispatch(projectsLoading(true))
 
-    return fetch(baseUrl + 'dishes')
+    return fetch(baseUrl + 'projects')
         .then(response => {
             if (response.ok){
                 return response;
@@ -64,22 +64,22 @@ export const fetchDishes = () => (dispatch) => {
             throw errmess;
         })
         .then(response => response.json())
-        .then(dishes => dispatch(addDishes(dishes)))
-        .catch(error => dispatch(dishesFailed(error.message)));
+        .then(projects => dispatch(addProjects(projects)))
+        .catch(error => dispatch(projectsFailed(error.message)));
 };
 
-export const dishesLoading = () => ({
-    type: ActionTypes.DISHES_LOADING
+export const projectsLoading = () => ({
+    type: ActionTypes.PROJECTS_LOADING
 });
 
-export const dishesFailed = (errmess) => ({
-    type: ActionTypes.DISHES_FAILED,
+export const projectsFailed = (errmess) => ({
+    type: ActionTypes.PROJECTS_FAILED,
     payload: errmess,
 });
 
-export const addDishes = (dishes) => ({
-    type: ActionTypes.ADD_DISHES,
-    payload: dishes,
+export const addProjects = (projects) => ({
+    type: ActionTypes.ADD_PROJECTS,
+    payload: projects,
 });
 
 export const fetchComments = () => (dispatch) => {

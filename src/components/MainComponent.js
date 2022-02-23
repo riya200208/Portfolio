@@ -11,14 +11,14 @@ import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled, {keyframes} from 'styled-components';
 import {bounce} from 'react-animations';
-import { postComment, fetchDishes,postFeedback, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
+import { postComment, fetchProjects,postFeedback, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
 import {actions} from 'react-redux-form';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`} 1`;
       
 const mapStateToProps = state =>{
   return {
-    dishes:state.dishes,
+    projects:state.projects,
     comments: state.comments,
     promotions: state.promotions,
     leaders: state.leaders
@@ -27,8 +27,8 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch => ({
   postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
   postFeedback: (feedback)=> dispatch(postFeedback(feedback)),
-  fetchDishes: () => { dispatch(fetchDishes())},
-  resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
+  fetchProjects: () =>  dispatch(fetchProjects()),
+  resetFeedbackForm: () =>  dispatch(actions.reset('feedback')),
   fetchComments: () => dispatch(fetchComments()),
   fetchPromos: () => dispatch(fetchPromos()),
   fetchLeaders: ()=> dispatch(fetchLeaders())
@@ -37,7 +37,7 @@ const mapDispatchToProps = dispatch => ({
 class Main extends Component{
 
   componentDidMount() {
-    this.props.fetchDishes();
+    this.props.fetchProjects();
     this.props.fetchComments();
     this.props.fetchPromos();
     this.props.fetchLeaders();
@@ -53,7 +53,7 @@ class Main extends Component{
        />,<About  leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
                leadersLoading={this.props.leaders.isLoading}
                leadersErrMess = {this.props.leaders.errMess}
-        />, <Project dishes={this.props.dishes} />, <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback}/>,     <Comment
+        />, <Project projects={this.props.projects} />, <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback}/>,     <Comment
         comments={this.props.comments.comments.filter((comment) => comment)}
         commentsErrMess={this.props.comments.errMess}
         postComment={this.props.postComment}
@@ -96,7 +96,7 @@ class Main extends Component{
        <CSSTransition key = {this.props.location.key} classNames="page" timeout={300}>
      <Switch>
               <Route path="/home" component={HomePage} />
-              <Route exact path="/projects" component={() => <Project dishes={this.props.dishes} />} />
+              <Route exact path="/projects" component={() => <Project projects={this.props.projects} />} />
              
               <Route path="/about" component={()=><About  leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
         leadersLoading={this.props.leaders.isLoading}
